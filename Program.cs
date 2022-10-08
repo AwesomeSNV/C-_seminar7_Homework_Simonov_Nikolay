@@ -51,7 +51,29 @@ else
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
+Console.WriteLine();
+Console.WriteLine("Среднее арифметическое в каждом столбце равно:");
+Average(array);
+
+
 //Methods
+
+void Average(int[,] array)
+{
+    double sum = 0;
+    double result = 0;
+    for(int j = 0; j < array.GetLength(1); j++)
+    {
+        for(int i = 0; i < array.GetLength(0); i++)
+        {
+            sum = sum + array[i,j];
+        }
+        result = sum/array.GetLength(0);
+        Console.Write($" |{result}| ");
+        sum = 0;
+        result = 0;
+    }
+}
 
 int[,] GetArray(int m, int n, int minValue, int maxValue)
 {
@@ -77,3 +99,4 @@ void PrintArray(int[,] array)
     Console.WriteLine();
     }
 }
+
